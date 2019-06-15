@@ -16,14 +16,13 @@
 
 package org.springframework.remoting.support;
 
-import java.lang.reflect.Method;
-
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.springframework.util.ClassUtils;
+
+import java.lang.reflect.Method;
 
 /**
  * AOP Alliance MethodInterceptor for tracing remote invocations.
@@ -43,6 +42,8 @@ import org.springframework.util.ClassUtils;
  * @see RemoteExporter#setRegisterTraceInterceptor
  * @see RemoteExporter#getProxyForService
  */
+
+//日志
 public class RemoteInvocationTraceInterceptor implements MethodInterceptor {
 
 	protected static final Log logger = LogFactory.getLog(RemoteInvocationTraceInterceptor.class);

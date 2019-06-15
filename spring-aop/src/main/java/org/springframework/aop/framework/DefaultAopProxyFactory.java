@@ -16,10 +16,10 @@
 
 package org.springframework.aop.framework;
 
+import org.springframework.aop.SpringProxy;
+
 import java.io.Serializable;
 import java.lang.reflect.Proxy;
-
-import org.springframework.aop.SpringProxy;
 
 /**
  * Default {@link AopProxyFactory} implementation, creating either a CGLIB proxy
@@ -44,6 +44,7 @@ import org.springframework.aop.SpringProxy;
  * @see AdvisedSupport#setInterfaces
  */
 @SuppressWarnings("serial")
+//默认的aop代理工厂
 public class DefaultAopProxyFactory implements AopProxyFactory, Serializable {
 
 	//创建aop代理 区别使用JDKProxy CglibProxy

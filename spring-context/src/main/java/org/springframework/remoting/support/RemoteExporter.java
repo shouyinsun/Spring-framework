@@ -158,7 +158,7 @@ public abstract class RemoteExporter extends RemotingSupport {
 		//添加代理接口
 		proxyFactory.addInterface(getServiceInterface());
 
-		//没有interceptor,则添加一个 RemoteInvocationTraceInterceptor 拦截器, 做日志记录用
+		//添加一个 RemoteInvocationTraceInterceptor 拦截器, 做日志记录用
 		if (this.registerTraceInterceptor != null ? this.registerTraceInterceptor : this.interceptors == null) {
 			proxyFactory.addAdvice(new RemoteInvocationTraceInterceptor(getExporterName()));
 		}
@@ -171,6 +171,7 @@ public abstract class RemoteExporter extends RemotingSupport {
 
 		//设置要代理的目标类
 		proxyFactory.setTarget(getService());
+		//opaque 不透明
 		proxyFactory.setOpaque(true);
 
 		//创建代理
